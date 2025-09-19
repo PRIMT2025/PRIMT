@@ -117,7 +117,7 @@
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
             <div class="column">
-                <h2 class="title is-3">Abstract</h2>
+                <h2 class="title is-3 has-text-centered" style="color: #6a053c;">Abstract</h2>
                 <div class="content has-text-justified">
                     <p style="font-size: 125%">
                         Preference-based reinforcement learning (PbRL) shows promise in aligning robot behaviors with human preferences, but its success depends heavily on the accurate modeling of human preferences through reward models. Most methods adopt Markovian assumptions for preference modeling (PM), which overlook the temporal dependencies within robot behavior trajectories that impact human evaluations. While recent works have utilized sequence modeling to mitigate this by learning sequential non-Markovian rewards, they ignore the multimodal nature of robot trajectories, which consist of elements from two distinctive modalities: state and action. As a result, they often struggle to capture the complex interplay between these modalities that significantly shapes human preferences. In this paper, we propose a multimodal sequence modeling approach for PM by disentangling state and action modalities. We introduce a multimodal transformer network, named PrefMMT, which hierarchically leverages intra-modal temporal dependencies and inter-modal state-action interactions to capture complex preference patterns. We demonstrate that PrefMMT consistently outperforms state-of-the-art PM baselines on locomotion tasks from the D4RL benchmark and manipulation tasks from the Meta-World benchmark.
@@ -132,7 +132,7 @@
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
             <div class="column">
-                <h2 class="title is-3">Framework Overview</h2>
+                <h2 class="title is-3 has-text-centered" style="color: #6a053c;">Framework Overview</h2>
                 <img src="assets/PRIMT_framework_animation.gif" alt="Animation of the PRIMT framework" style="width: 100%; border-radius: 5px;">
                 <div class="content has-text-justified">
                     <p style="font-size: 125%">
@@ -147,7 +147,7 @@
 
 <section class="section" id="experimental-demos">
     <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Experimental Demos</h2>
+        <h2 class="title is-3 has-text-centered" style="color: #6a053c;">Experimental Demos</h2>
         <br>
 
         <h3 class="subtitle is-4 has-text-centered" style="margin-bottom: 30px; color: #555;">
@@ -155,11 +155,9 @@
         </h3>
 
         <h3 class="subtitle is-4 is-italic has-text-centered" style="margin-bottom: 40px;">MetaWorld</h3>
-
         <div class="columns is-centered">
-            
             <div class="column is-one-third">
-                <h4 class="title is-5 has-text-centered">Button Press</h4>
+                <h4 class="title is-6 has-text-centered">Button Press</h4>
                 <div class="gif-carousel" id="button-press-carousel">
                     <div class="carousel-images">
                         <img src="assets/metaworld_button_press_primt.gif" alt="Button Press PRIMT" class="active" data-label="PRIMT">
@@ -176,9 +174,8 @@
                     </div>
                 </div>
             </div>
-
             <div class="column is-one-third">
-                <h4 class="title is-5 has-text-centered">Door Open</h4>
+                <h4 class="title is-6 has-text-centered">Door Open</h4>
                 <div class="gif-carousel" id="door-open-carousel">
                     <div class="carousel-images">
                         <img src="assets/metaworld_door_open_primt.gif" alt="Door Open PRIMT" class="active" data-label="PRIMT">
@@ -195,9 +192,8 @@
                     </div>
                 </div>
             </div>
-
             <div class="column is-one-third">
-                <h4 class="title is-5 has-text-centered">Sweep Into</h4>
+                <h4 class="title is-6 has-text-centered">Sweep Into</h4>
                 <div class="gif-carousel" id="sweep-into-carousel">
                     <div class="carousel-images">
                         <img src="assets/metaworld_sweep_into_primt.gif" alt="Sweep Into PRIMT" class="active" data-label="PRIMT">
@@ -215,6 +211,105 @@
                 </div>
             </div>
         </div>
+
+        <h3 class="subtitle is-4 is-italic has-text-centered" style="margin-top: 40px; margin-bottom: 40px;">ManiSkill</h3>
+        <div class="columns is-centered">
+            <div class="column is-one-third">
+                <h4 class="title is-6 has-text-centered">PegInsertionSide</h4>
+                <div class="gif-carousel" id="peg-insertion-carousel">
+                    <div class="carousel-images">
+                        <img src="assets/maniskill_peg_insertion_primt.gif" alt="PegInsertionSide PRIMT" class="active" data-label="PRIMT">
+                        <img src="assets/maniskill_peg_insertion_baseline.gif" alt="PegInsertionSide Baseline" data-label="Baseline">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev-btn">&lt;</button>
+                        <button class="next-btn">&gt;</button>
+                    </div>
+                    <p class="gif-label has-text-centered">PRIMT</p>
+                    <div class="dots-container has-text-centered">
+                        <span class="dot active" onclick="currentSlide('peg-insertion-carousel', 0)"></span>
+                        <span class="dot" onclick="currentSlide('peg-insertion-carousel', 1)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <h4 class="title is-6 has-text-centered">PickSingleYCB</h4>
+                <div class="gif-carousel" id="pick-single-carousel">
+                    <div class="carousel-images">
+                        <img src="assets/maniskill_pick_single_primt.gif" alt="PickSingleYCB PRIMT" class="active" data-label="PRIMT">
+                        <img src="assets/maniskill_pick_single_baseline.gif" alt="PickSingleYCB Baseline" data-label="Baseline">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev-btn">&lt;</button>
+                        <button class="next-btn">&gt;</button>
+                    </div>
+                    <p class="gif-label has-text-centered">PRIMT</p>
+                    <div class="dots-container has-text-centered">
+                        <span class="dot active" onclick="currentSlide('pick-single-carousel', 0)"></span>
+                        <span class="dot" onclick="currentSlide('pick-single-carousel', 1)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <h4 class="title is-6 has-text-centered">StackCube</h4>
+                <div class="gif-carousel" id="stack-cube-carousel">
+                    <div class="carousel-images">
+                        <img src="assets/maniskill_stack_cube_primt.gif" alt="StackCube PRIMT" class="active" data-label="PRIMT">
+                        <img src="assets/maniskill_stack_cube_baseline.gif" alt="StackCube Baseline" data-label="Baseline">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev-btn">&lt;</button>
+                        <button class="next-btn">&gt;</button>
+                    </div>
+                    <p class="gif-label has-text-centered">PRIMT</p>
+                    <div class="dots-container has-text-centered">
+                        <span class="dot active" onclick="currentSlide('stack-cube-carousel', 0)"></span>
+                        <span class="dot" onclick="currentSlide('stack-cube-carousel', 1)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="subtitle is-4 is-italic has-text-centered" style="margin-top: 40px; margin-bottom: 40px;">DMControl</h3>
+        <div class="columns is-centered">
+            <div class="column is-one-third">
+                <h4 class="title is-6 has-text-centered">Hopper Stand</h4>
+                <div class="gif-carousel" id="hopper-stand-carousel">
+                    <div class="carousel-images">
+                        <img src="assets/dmcontrol_hopper_stand_primt.gif" alt="Hopper Stand PRIMT" class="active" data-label="PRIMT">
+                        <img src="assets/dmcontrol_hopper_stand_baseline.gif" alt="Hopper Stand Baseline" data-label="Baseline">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev-btn">&lt;</button>
+                        <button class="next-btn">&gt;</button>
+                    </div>
+                    <p class="gif-label has-text-centered">PRIMT</p>
+                    <div class="dots-container has-text-centered">
+                        <span class="dot active" onclick="currentSlide('hopper-stand-carousel', 0)"></span>
+                        <span class="dot" onclick="currentSlide('hopper-stand-carousel', 1)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <h4 class="title is-6 has-text-centered">Walker Walk</h4>
+                <div class="gif-carousel" id="walker-walk-carousel">
+                    <div class="carousel-images">
+                        <img src="assets/dmcontrol_walker_walk_primt.gif" alt="Walker Walk PRIMT" class="active" data-label="PRIMT">
+                        <img src="assets/dmcontrol_walker_walk_baseline.gif" alt="Walker Walk Baseline" data-label="Baseline">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev-btn">&lt;</button>
+                        <button class="next-btn">&gt;</button>
+                    </div>
+                    <p class="gif-label has-text-centered">PRIMT</p>
+                    <div class="dots-container has-text-centered">
+                        <span class="dot active" onclick="currentSlide('walker-walk-carousel', 0)"></span>
+                        <span class="dot" onclick="currentSlide('walker-walk-carousel', 1)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </section>
 
