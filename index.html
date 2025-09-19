@@ -134,6 +134,11 @@
             <div class="column">
                 <h2 class="title is-3">Framework Overview</h2>
                 <img src="assets/PRIMT_framework_animation.gif" alt="Animation of the PRIMT framework" style="width: 100%; border-radius: 5px;">
+                <div class="content has-text-justified">
+                    <p style="font-size: 125%">
+                        Overview of the PRIMT, comprising of two synergistic modules: 1) Hierarchical neuro-symbolic preference fusion improves the quality and reliability of synthetic feedback by leveraging the complementary collective intelligence of VLMs and LLMs for multimodal evaluation of robot behaviors; and 2) Bidirectional trajectory synthesis consists of foresight trajectory generation, which bootstraps the trajectory buffer to mitigate early-stage query ambiguity, and hindsight trajectory augmentation, which applies SCM-based counterfactual reasoning to improve reward learning with a causal auxiliary loss that enables fine-grained credit assignment.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -141,166 +146,239 @@
 
 
     <section class="section">
-        <div class="container is-max-widescreen">
-            <div class="rows">
-                <div class="rows is-centered ">
-                    <div class="row is-full-width">
-                        <h2 class="title is-3"><span class="dvima">Eureka Rewards and Policies</span></h2>
-                        <p style="font-size: 125%">
-                            In this demo, we visualize the unmodified best Eureka reward
-                            for each
-                            environment and the policy trained using this reward. Our environment suite spans 10 robots and 29 distinct tasks across two 
-                            open-sourced benchmarks, Isaac Gym (Isaac) and Bidexterous Manipulation (Dexterity).
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="columns" style="align-items: end;">
-                <div class="column is-half">
-                    <p style="font-size: 1.5em"><b>Isaac</b></p>
-                    <div class="col-md-4 col-sm-4 col-xs-4">
-                        <img src="videos/task_final/allegro_hand.png" width="18%" style="border-radius: 5px;" alt='<b>AllegroHand</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/allegro_hand.txt' onclick="populateDemo(this, 1);">
+    <div class="container is-max-desktop">
+        </div>
+</section>
 
-                        <img src="videos/task_final/ant.png" width="18%" style="border-radius: 5px;" alt='<b>Ant</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/ant.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/anymal.png" width="18%" style="border-radius: 5px;" alt='<b>Anymal</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/anymal.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/ball_balance.png" width="18%" style="border-radius: 5px;" alt='<b>BallBalance</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/ball_balance.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/cartpole.png" width="18%" style="border-radius: 5px;" alt='<b>Cartpole</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/cartpole.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/franka_cabinet.png" width="18%" style="border-radius: 5px;" alt='<b>FrankaCabinet</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/franka_cabinet.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/humanoid.png" width="18%" style="border-radius: 5px;" alt='<b>Humanoid</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/humanoid.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/quadcopter.png" width="18%" style="border-radius: 5px;" alt='<b>Quadcopter</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/quadcopter.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/shadow_hand.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHand</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand.txt' onclick="populateDemo(this, 1);">
-                    </div>
-
-                    <br>
-                    <p style="font-size: 1.5em"><b>Dexterity</b></p>
-                    <div class="col-md-4 col-sm-4 col-xs-4">
-                        <img src="videos/task_final/bidex_block_stacking.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandBlockStack</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_block_stack.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_bottle_cap.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandBottleCap</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_bottle_cap.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_catch_abreast.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandCatchAbreast</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_catch_abreast.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_catch_over2underarm.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandCatchOver2Underarm</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_catch_over_2_underarm.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_catch_underarm.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandCatchUnderarm</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_catch_underarm.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_door_close_inward.png" width="18%" style="border-radius: 5px;"
-                            alt='<b>ShadowHandDoorCloseInward</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_door_close_inward.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_door_close_outward.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandDoorCloseOutward</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_door_close_outward.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_door_open_inward.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandDoorOpenInward</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_door_open_inward.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_door_open_outward.png" width="18%" style="border-radius: 5px;"
-                            alt='<b>ShadowHandDoorOpenOutward</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_door_open_outward.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_grasp_and_place.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandGraspAndPlace</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_grasp_and_place.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_kettle.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandKettle</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_kettle.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_lift_undearm.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandLiftUnderarm</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_lift_underarm.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_over.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandOver</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_over.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_pen.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandPen</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_pen.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_push_block.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandPushBlock</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_push_block.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_re_orientation.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandReorientation</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_reorientation.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_scissors.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandScissors</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_scissors.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_swing_cup.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandSwingCup</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_swing_cup.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_switch.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandSwitch</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_switch.txt' onclick="populateDemo(this, 1);">
-
-                        <img src="videos/task_final/bidex_two_catch_underarm.png" width="18%" style="border-radius: 5px;" alt='<b>ShadowHandTwoCatchUnderarm</b>, best Eureka reward:
-                        [sep]
-                        assets/reward_functions/shadow_hand_two_catch_underarm.txt' onclick="populateDemo(this, 1);">
-                    </div>
-                </div>
-                <div class="row border rounded" style="padding-top:12px; padding-bottom:12px;">
-                    <div class="col-md-6">
-                        <video id="demo-video-1" style="border-radius: 5px;" autoplay loop muted webkit-playsinline
-                            playsinline onclick="setAttribute('controls', 'true');">
-                            <source id="expandedImg-1" src="videos/placeholder.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div id="imgtext-1" style="font-size: 1.5em">Select an image above:</div>
-                <div>
-                    <pre
-                        class="p-1"><code class="language-python" id="answer-1">Eureka response shown within code block.</code></pre>
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <h2 class="title is-3">Framework Overview</h2>
+                <img src="assets/PRIMT_framework_animation.gif" alt="Animation of the PRIMT framework" style="width: 100%; border-radius: 5px;">
+                <div class="content has-text-justified">
+                    <p style="font-size: 125%">
+                        Overview of the PRIMT, comprising of two synergistic modules: 1) Hierarchical neuro-symbolic preference fusion improves the quality and reliability of synthetic feedback by leveraging the complementary collective intelligence of VLMs and LLMs for multimodal evaluation of robot behaviors; and 2) Bidirectional trajectory synthesis consists of foresight trajectory generation, which bootstraps the trajectory buffer to mitigate early-stage query ambiguity, and hindsight trajectory augmentation, which applies SCM-based counterfactual reasoning to improve reward learning with a causal auxiliary loss that enables fine-grained credit assignment.
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<section class="section" id="experimental-demos">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3" style="color: #6a053c;">Experimental Demos</h2>
+        <p class="has-text-centered" style="font-size: 115%; margin-top: -15px; margin-bottom: 30px;">
+            PRIMT can lead to more efficient robot behaviors across diverse tasks in zero-shot.
+        </p>
+
+        <h3 class="subtitle is-4 is-italic has-text-centered" style="margin-bottom: 40px;">MetaWorld</h3>
+
+        <div class="columns is-centered">
+            <div class="column is-one-third">
+                <h4 class="title is-5 has-text-centered">Button Press</h4>
+                <div class="gif-carousel" id="button-press-carousel">
+                    <div class="carousel-images">
+                        <img src="assets/metaworld_button_press_primt.gif" alt="Button Press PRIMT" class="active" data-label="PRIMT">
+                        <img src="assets/metaworld_button_press_baseline.gif" alt="Button Press Baseline" data-label="Baseline">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev-btn">&lt;</button>
+                        <button class="next-btn">&gt;</button>
+                    </div>
+                    <p class="gif-label has-text-centered">PRIMT</p>
+                    <div class="dots-container has-text-centered">
+                        <span class="dot active" onclick="currentSlide('button-press-carousel', 0)"></span>
+                        <span class="dot" onclick="currentSlide('button-press-carousel', 1)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-one-third">
+                <h4 class="title is-5 has-text-centered">Door Open</h4>
+                <div class="gif-carousel" id="door-open-carousel">
+                    <div class="carousel-images">
+                        <img src="assets/metaworld_door_open_primt.gif" alt="Door Open PRIMT" class="active" data-label="PRIMT">
+                        <img src="assets/metaworld_door_open_baseline.gif" alt="Door Open Baseline" data-label="Baseline">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev-btn">&lt;</button>
+                        <button class="next-btn">&gt;</button>
+                    </div>
+                    <p class="gif-label has-text-centered">PRIMT</p>
+                    <div class="dots-container has-text-centered">
+                        <span class="dot active" onclick="currentSlide('door-open-carousel', 0)"></span>
+                        <span class="dot" onclick="currentSlide('door-open-carousel', 1)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-one-third">
+                <h4 class="title is-5 has-text-centered">Sweep Into</h4>
+                <div class="gif-carousel" id="sweep-into-carousel">
+                    <div class="carousel-images">
+                        <img src="assets/metaworld_sweep_into_primt.gif" alt="Sweep Into PRIMT" class="active" data-label="PRIMT">
+                        <img src="assets/metaworld_sweep_into_baseline.gif" alt="Sweep Into Baseline" data-label="Baseline">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev-btn">&lt;</button>
+                        <button class="next-btn">&gt;</button>
+                    </div>
+                    <p class="gif-label has-text-centered">PRIMT</p>
+                    <div class="dots-container has-text-centered">
+                        <span class="dot active" onclick="currentSlide('sweep-into-carousel', 0)"></span>
+                        <span class="dot" onclick="currentSlide('sweep-into-carousel', 1)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+</section>
+
+
+
+<style>
+    /* General styles for the carousel */
+    .gif-carousel {
+        position: relative;
+        margin: 0 auto 30px auto;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        max-width: 300px; /* Adjust as needed for column width */
+    }
+
+    .gif-carousel .carousel-images {
+        display: flex;
+        width: 100%;
+        overflow: hidden; /* Hide images not currently active */
+        position: relative;
+    }
+
+    .gif-carousel .carousel-images img {
+        width: 100%;
+        display: none; /* Hide all images by default */
+        border: none; /* Remove border from carousel images */
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .gif-carousel .carousel-images img.active {
+        display: block; /* Show active image */
+    }
+
+    .gif-carousel .carousel-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        z-index: 10;
+        padding: 0 5px;
+    }
+
+    .gif-carousel .carousel-nav button {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 50%;
+        font-size: 1.2em;
+        opacity: 0.7;
+        transition: opacity 0.3s;
+    }
+
+    .gif-carousel .carousel-nav button:hover {
+        opacity: 1;
+    }
+
+    .gif-carousel .gif-label {
+        margin-top: 10px;
+        font-weight: bold;
+        color: #333;
+        font-size: 1em;
+    }
+
+    .dots-container {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        cursor: pointer;
+    }
+
+    .dot.active {
+        background-color: #007bff; /* Blue for active dot */
+    }
+
+    /* Override general image styles for carousel images */
+    .gif-carousel img {
+        margin: 0; /* Remove default margin */
+        border: none; /* Remove default border */
+        border-radius: 0; /* Remove default border-radius */
+    }
+</style>
+
+<script>
+    function showSlide(carouselId, n) {
+        let carousel = document.getElementById(carouselId);
+        let images = carousel.getElementsByClassName("carousel-images")[0].getElementsByTagName("img");
+        let dots = carousel.getElementsByClassName("dots-container")[0].getElementsByClassName("dot");
+        let label = carousel.getElementsByClassName("gif-label")[0];
+
+        // Wrap around logic
+        if (n >= images.length) { n = 0 }
+        if (n < 0) { n = images.length - 1 }
+
+        // Hide all images and deactivate all dots
+        for (let i = 0; i < images.length; i++) {
+            images[i].classList.remove('active');
+            dots[i].classList.remove('active');
+        }
+
+        // Show the current image and activate its dot
+        images[n].classList.add('active');
+        dots[n].classList.add('active');
+        label.textContent = images[n].dataset.label; // Update label
+        carousel.dataset.currentSlide = n; // Store current slide index
+    }
+
+    function plusSlides(carouselId, n) {
+        let carousel = document.getElementById(carouselId);
+        let current = parseInt(carousel.dataset.currentSlide || 0);
+        showSlide(carouselId, current + n);
+    }
+
+    function currentSlide(carouselId, n) {
+        showSlide(carouselId, n);
+    }
+
+    // Initialize all carousels
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.gif-carousel').forEach(carousel => {
+            carousel.dataset.currentSlide = 0; // Initialize current slide for each carousel
+            showSlide(carousel.id, 0); // Show the first slide for each carousel
+            
+            // Add event listeners for navigation buttons
+            carousel.querySelector('.prev-btn').addEventListener('click', () => plusSlides(carousel.id, -1));
+            carousel.querySelector('.next-btn').addEventListener('click', () => plusSlides(carousel.id, 1));
+        });
+    });
+</script>
+
+
+
+
 
     <section class="section">
         <div class="container is-max-widescreen">
